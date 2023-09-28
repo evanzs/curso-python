@@ -18,11 +18,18 @@ def read(url):
         return dados
 
 
-def imprimir(dados):
+def imprimir_1(dados):
     registros = csv.reader(dados.splitlines())
     for index,cidade in enumerate(registros):
         if(index == 0): #pula o header
             continue;
+        print(f'{cidade}')
+        break
+
+def imprimir_2(dados):
+    registros = csv.reader(dados.splitlines())
+    next(registros) # pulando uma linha nos registros
+    for index,cidade in enumerate(registros):
         print(f'{cidade}')
         break
 
