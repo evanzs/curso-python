@@ -1,0 +1,19 @@
+#!/bin/python3
+
+
+def calc_preco_final(preco_bruto,calc_imposto,*params):
+    return preco_bruto + preco_bruto*calc_imposto(*params)
+
+def imposto_x(importado):
+    print("É importado?", importado)
+    return 0.22 if importado else 0.13
+
+def imposto_y(explosivo,fator_mult=1):
+    print("fator que multiplica",fator_mult)
+    return 0.11 * fator_mult if explosivo else 0
+
+
+
+preco =134.98
+preco_final = calc_preco_final(preco,imposto_x,True)
+preco_final = calc_preco_final(preco,imposto_y,True,1.8)
