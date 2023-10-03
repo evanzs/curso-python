@@ -21,3 +21,9 @@ def soma_n(*num):
 print(soma_n(2,3))
 print(soma_n(2,3,1))
 print(soma_n(1,1,1,1))
+
+
+##exemplo de unpacking
+nums = (1,1,20)
+#print("sem unpacking",soma_n(nums))
+print("unpacking",soma_n(*nums))
