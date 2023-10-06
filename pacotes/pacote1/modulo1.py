@@ -1,4 +1,4 @@
-print("importado" + __name__+' '+__package__ )
+print("importado " + __name__+' '+__package__ )
 
 
 def soma(x,y):
