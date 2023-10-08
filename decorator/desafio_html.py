@@ -1,9 +1,19 @@
 #!/bin/python3
 
 
-def tag(tag,*args,**kwargs):
-    pass
+def tag_bloco(classe):
+    if 'html_class' in classe:
+      classe['class'] = classe.pop('html_class')     
+    return ''.join(f'{k}="{v}"' for k,v in classe.items())
 
+    
+def tag_inner(inner):
+    return ''.join(f'{k}' for k in inner)
+
+def tag(tag,*args,**kwargs):   
+    props = tag_bloco(kwargs)    
+    inner = tag_inner(args)
+    return  f'<{tag} {props}>{inner}</{tag}>'
 
 
 #saida 
