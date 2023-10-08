@@ -1,4 +1,6 @@
-from app.utils.gerador import nome_nome
+#!/bin/python3
+
+from app.utils.gerador import novo_nome
 from app.negocio import nome_existe
 from app.negocio.backend import add_nome
 
@@ -10,3 +12,6 @@ def main():
             add_nome(nome)
             break
     print(f'Criando novo nome de testes: "{nome}"')
+
+
+main()
